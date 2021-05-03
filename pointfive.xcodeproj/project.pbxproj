@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		A4FF00FA2640056600649BFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FF00F92640056600649BFE /* Preview Assets.xcassets */; };
 		A4FF01052640056600649BFE /* pointfiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF01042640056600649BFE /* pointfiveTests.swift */; };
 		A4FF01102640056700649BFE /* pointfiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF010F2640056700649BFE /* pointfiveUITests.swift */; };
+		A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01272640153800649BFE /* ComposableArchitecture */; };
+		A4FF01312640756D00649BFE /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01302640756D00649BFE /* PointFiveKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FF01312640756D00649BFE /* PointFiveKit in Frameworks */,
+				A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +150,10 @@
 			dependencies = (
 			);
 			name = pointfive;
+			packageProductDependencies = (
+				A4FF01272640153800649BFE /* ComposableArchitecture */,
+				A4FF01302640756D00649BFE /* PointFiveKit */,
+			);
 			productName = pointfive;
 			productReference = A4FF00EF2640055B00649BFE /* pointfive.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +225,10 @@
 				Base,
 			);
 			mainGroup = A4FF00E62640055A00649BFE;
+			packageReferences = (
+				A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */,
+			);
 			productRefGroup = A4FF00F02640055B00649BFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -580,6 +592,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.18.0;
+			};
+		};
+		A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/arvind/Lab/PointFiveKit";
+			requirement = {
+				branch = "arvind/jim-15-feature-setup-pointfivekit";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4FF01272640153800649BFE /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		A4FF01302640756D00649BFE /* PointFiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */;
+			productName = PointFiveKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4FF00E72640055A00649BFE /* Project object */;
 }

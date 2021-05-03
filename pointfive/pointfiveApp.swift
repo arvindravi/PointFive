@@ -11,7 +11,19 @@ import SwiftUI
 struct pointfiveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                store: .init(
+                    initialState: .init(
+                        drivers: [
+                            .mock,
+                            .mock,
+                            .mock 
+                        ]
+                    ),
+                    reducer: reducer,
+                    environment: AppEnvironment.live
+                )
+            )
         }
     }
 }
