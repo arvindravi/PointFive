@@ -10,24 +10,6 @@ import ComposableArchitecture
 import Combine
 import SwiftUI
 
-struct Driver: Equatable, Identifiable {
-    let id = UUID()
-    let name: String
-    let team: Team
-    
-    enum Team: String {
-        case mercedes, ferrari, redbull, mclaren, renault, astonmartin, alfaromeo, alphatauri, haas, williams
-        
-        var displayName: String {
-            rawValue
-        }
-    }
-}
-
-extension Driver {
-    static let mock: Driver  = .init(name: "Lando Norris", team: .mclaren)
-}
-
 struct AppState: Equatable {
     var drivers: [Driver]
 }
@@ -67,7 +49,6 @@ let reducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, envi
             return .none
         default: return .none
         }
-    default: return .none
     }
 }
 .debug()
@@ -104,7 +85,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(
+        ContentView( 
             store: .init(
                 initialState: .init(
                     drivers: [

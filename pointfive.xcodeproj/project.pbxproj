@@ -15,6 +15,7 @@
 		A4FF01102640056700649BFE /* pointfiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF010F2640056700649BFE /* pointfiveUITests.swift */; };
 		A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01272640153800649BFE /* ComposableArchitecture */; };
 		A4FF01312640756D00649BFE /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01302640756D00649BFE /* PointFiveKit */; };
+		A4FF013C264096F700649BFE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF013B264096F700649BFE /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A4FF010B2640056700649BFE /* pointfiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pointfiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FF010F2640056700649BFE /* pointfiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointfiveUITests.swift; sourceTree = "<group>"; };
 		A4FF01112640056700649BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4FF013B264096F700649BFE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FF00F22640055B00649BFE /* pointfiveApp.swift */,
+				A4FF013B264096F700649BFE /* Models.swift */,
 				A4FF00F42640055B00649BFE /* ContentView.swift */,
 				A4FF00F62640056600649BFE /* Assets.xcassets */,
 				A4FF00FB2640056600649BFE /* Info.plist */,
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FF013C264096F700649BFE /* Models.swift in Sources */,
 				A4FF00F52640055B00649BFE /* ContentView.swift in Sources */,
 				A4FF00F32640055B00649BFE /* pointfiveApp.swift in Sources */,
 			);
