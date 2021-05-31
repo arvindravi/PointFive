@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4B013B3265BC2AF0000B9C2 /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4B013B2265BC2AF0000B9C2 /* PointFiveKit */; };
 		A4FF00F32640055B00649BFE /* pointfiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF00F22640055B00649BFE /* pointfiveApp.swift */; };
 		A4FF00F52640055B00649BFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF00F42640055B00649BFE /* ContentView.swift */; };
 		A4FF00F72640056600649BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FF00F62640056600649BFE /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		A4FF01052640056600649BFE /* pointfiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF01042640056600649BFE /* pointfiveTests.swift */; };
 		A4FF01102640056700649BFE /* pointfiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF010F2640056700649BFE /* pointfiveUITests.swift */; };
 		A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01272640153800649BFE /* ComposableArchitecture */; };
-		A4FF01312640756D00649BFE /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01302640756D00649BFE /* PointFiveKit */; };
 		A4FF013C264096F700649BFE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF013B264096F700649BFE /* Models.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4FF01312640756D00649BFE /* PointFiveKit in Frameworks */,
+				A4B013B3265BC2AF0000B9C2 /* PointFiveKit in Frameworks */,
 				A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +144,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4FF01142640056700649BFE /* Build configuration list for PBXNativeTarget "pointfive" */;
 			buildPhases = (
+				A4FF01492641E46C00649BFE /* SwiftLint */,
 				A4FF00EB2640055B00649BFE /* Sources */,
 				A4FF00EC2640055B00649BFE /* Frameworks */,
 				A4FF00ED2640055B00649BFE /* Resources */,
@@ -155,7 +156,7 @@
 			name = pointfive;
 			packageProductDependencies = (
 				A4FF01272640153800649BFE /* ComposableArchitecture */,
-				A4FF01302640756D00649BFE /* PointFiveKit */,
+				A4B013B2265BC2AF0000B9C2 /* PointFiveKit */,
 			);
 			productName = pointfive;
 			productReference = A4FF00EF2640055B00649BFE /* pointfive.app */;
@@ -230,7 +231,7 @@
 			mainGroup = A4FF00E62640055A00649BFE;
 			packageReferences = (
 				A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */,
+				A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */,
 			);
 			productRefGroup = A4FF00F02640055B00649BFE /* Products */;
 			projectDirPath = "";
@@ -268,6 +269,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4FF01492641E46C00649BFE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A4FF00EB2640055B00649BFE /* Sources */ = {
@@ -446,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arvindravi.pointfive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -468,7 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arvindravi.pointfive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -598,6 +620,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/arvind/Lab/PointFiveKit";
+			requirement = {
+				branch = "arvind/jim-12-setup-cloudkit";
+				kind = branch;
+			};
+		};
 		A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -606,26 +636,18 @@
 				minimumVersion = 0.18.0;
 			};
 		};
-		A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/arvind/Lab/PointFiveKit";
-			requirement = {
-				branch = "arvind/jim-15-feature-setup-pointfivekit";
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A4B013B2265BC2AF0000B9C2 /* PointFiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */;
+			productName = PointFiveKit;
+		};
 		A4FF01272640153800649BFE /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		A4FF01302640756D00649BFE /* PointFiveKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A4FF012F2640756D00649BFE /* XCRemoteSwiftPackageReference "PointFiveKit" */;
-			productName = PointFiveKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

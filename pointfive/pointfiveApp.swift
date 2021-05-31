@@ -14,11 +14,8 @@ struct pointfiveApp: App {
             ContentView(
                 store: .init(
                     initialState: .init(
-                        drivers: [
-                            .mock,
-                            .mock,
-                            .mock 
-                        ]
+                        drivers: [],
+                        teams: []
                     ),
                     reducer: reducer,
                     environment: AppEnvironment.live

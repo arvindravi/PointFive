@@ -12,11 +12,12 @@ import SwiftUI
 
 struct AppState: Equatable {
     var drivers: [Driver]
+    var teams: [Team]
 }
 
 enum AppAction {
     case onAppear
-    case fetchedImage(Result<PointFiveKit.Action, Never>)
+    case result(PointFiveKit.Action)
 }
 
 struct AppEnvironment {
@@ -37,33 +38,28 @@ let reducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, envi
     case .onAppear:
         return environment
             .pointFiveKit
-            .fetch(.drivers, environment.session)
-            .catchToEffect()
-            .map { AppAction.fetchedImage($0) }
-    case let .fetchedImage(result):
-        switch result {
-        case let .success(.result(image)):
-            state.drivers = [
-                .init(name: image.message, team: .mercedes)
-            ]
-            return .none
-        default: return .none
-        }
+            .fetch(.teams, environment.session)
+            .receive(on: DispatchQueue.main)
+            .map(AppAction.result)
+            .eraseToEffect()
+    case let .result(.teamsFetchResult(teams)):
+        state.teams = teams
+        return .none
+    default: return .none
     }
 }
 .debug()
 
-struct DriverCardView: View {
-    let driver: Driver
+struct TeamCardView: View {
+    @State
+    var team: Team
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text(driver.name)
-                .font(.title)
-            
-            Text(driver.team.displayName)
-                .font(.title3)
-                .foregroundColor(.orange)
+            Text(team.name)
+                .font(.title2)
         }
+        .background(Color.orange)
     }
 }
 
@@ -71,14 +67,17 @@ struct ContentView: View {
     let store: Store<AppState, AppAction>
     var body: some View {
         WithViewStore(store) { viewStore in
-            List {
-                ForEach(viewStore.drivers) { driver in
-                    DriverCardView(driver: driver)
+            NavigationView {
+                List {
+                    ForEach(viewStore.teams) { team in
+                        TeamCardView(team: team)
+                    }
                 }
+                .navigationTitle("Teams")
+                .onAppear(perform: {
+                    viewStore.send(.onAppear)
+                })
             }
-            .onAppear(perform: {
-                viewStore.send(.onAppear)
-            })
         }
     }
 }
@@ -88,11 +87,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView( 
             store: .init(
                 initialState: .init(
-                    drivers: [
-                        .mock,
-                        .mock,
-                        .mock
-                    ]
+                    drivers: [],
+                    teams: [.mock, .mock, .mock]
                 ),
                 reducer: reducer,
                 environment: AppEnvironment.live
