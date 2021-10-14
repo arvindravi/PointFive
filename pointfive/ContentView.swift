@@ -58,8 +58,9 @@ struct TeamCardView: View {
         VStack(alignment: .leading) {
             Text(team.name)
                 .font(.title2)
+				.foregroundColor(.white)
         }
-        .background(Color.orange)
+		.background(Color(brandColor: team.brandColour))
     }
 }
 
