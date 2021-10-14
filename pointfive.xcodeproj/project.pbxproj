@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A4B013B3265BC2AF0000B9C2 /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4B013B2265BC2AF0000B9C2 /* PointFiveKit */; };
 		A4FF00F32640055B00649BFE /* pointfiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF00F22640055B00649BFE /* pointfiveApp.swift */; };
 		A4FF00F52640055B00649BFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF00F42640055B00649BFE /* ContentView.swift */; };
 		A4FF00F72640056600649BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FF00F62640056600649BFE /* Assets.xcassets */; };
@@ -16,6 +15,8 @@
 		A4FF01102640056700649BFE /* pointfiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF010F2640056700649BFE /* pointfiveUITests.swift */; };
 		A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A4FF01272640153800649BFE /* ComposableArchitecture */; };
 		A4FF013C264096F700649BFE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FF013B264096F700649BFE /* Models.swift */; };
+		F4E4A7DB271873D90089B3BF /* PointFiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4E4A7DA271873D90089B3BF /* PointFiveKit */; };
+		F4E4A7DD27187A7B0089B3BF /* Color+PointFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4A7DC27187A7B0089B3BF /* Color+PointFive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A4FF010F2640056700649BFE /* pointfiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointfiveUITests.swift; sourceTree = "<group>"; };
 		A4FF01112640056700649BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4FF013B264096F700649BFE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F4E4A7DC27187A7B0089B3BF /* Color+PointFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PointFive.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4B013B3265BC2AF0000B9C2 /* PointFiveKit in Frameworks */,
+				F4E4A7DB271873D90089B3BF /* PointFiveKit in Frameworks */,
 				A4FF01282640153800649BFE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +109,7 @@
 				A4FF00F62640056600649BFE /* Assets.xcassets */,
 				A4FF00FB2640056600649BFE /* Info.plist */,
 				A4FF00F82640056600649BFE /* Preview Content */,
+				F4E4A7DE27187A830089B3BF /* Extensions */,
 			);
 			path = pointfive;
 			sourceTree = "<group>";
@@ -137,6 +140,14 @@
 			path = pointfiveUITests;
 			sourceTree = "<group>";
 		};
+		F4E4A7DE27187A830089B3BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4A7DC27187A7B0089B3BF /* Color+PointFive.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,7 +167,7 @@
 			name = pointfive;
 			packageProductDependencies = (
 				A4FF01272640153800649BFE /* ComposableArchitecture */,
-				A4B013B2265BC2AF0000B9C2 /* PointFiveKit */,
+				F4E4A7DA271873D90089B3BF /* PointFiveKit */,
 			);
 			productName = pointfive;
 			productReference = A4FF00EF2640055B00649BFE /* pointfive.app */;
@@ -231,7 +242,7 @@
 			mainGroup = A4FF00E62640055A00649BFE;
 			packageReferences = (
 				A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */,
+				F4E4A7D9271873D90089B3BF /* XCRemoteSwiftPackageReference "PointFiveKit" */,
 			);
 			productRefGroup = A4FF00F02640055B00649BFE /* Products */;
 			projectDirPath = "";
@@ -298,6 +309,7 @@
 			files = (
 				A4FF013C264096F700649BFE /* Models.swift in Sources */,
 				A4FF00F52640055B00649BFE /* ContentView.swift in Sources */,
+				F4E4A7DD27187A7B0089B3BF /* Color+PointFive.swift in Sources */,
 				A4FF00F32640055B00649BFE /* pointfiveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,14 +632,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/arvind/Lab/PointFiveKit";
-			requirement = {
-				branch = "arvind/jim-12-setup-cloudkit";
-				kind = branch;
-			};
-		};
 		A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -636,18 +640,26 @@
 				minimumVersion = 0.18.0;
 			};
 		};
+		F4E4A7D9271873D90089B3BF /* XCRemoteSwiftPackageReference "PointFiveKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arvindravi/PointFiveKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A4B013B2265BC2AF0000B9C2 /* PointFiveKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A4B013B1265BC2AF0000B9C2 /* XCRemoteSwiftPackageReference "PointFiveKit" */;
-			productName = PointFiveKit;
-		};
 		A4FF01272640153800649BFE /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A4FF01262640153800649BFE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		F4E4A7DA271873D90089B3BF /* PointFiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4E4A7D9271873D90089B3BF /* XCRemoteSwiftPackageReference "PointFiveKit" */;
+			productName = PointFiveKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

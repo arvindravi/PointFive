@@ -9,6 +9,6 @@ import Foundation
 import PointFiveKit
 
 extension Team {
-    static let mock: Team = Team(name: "McLaren",
-                                 brandColour: "orange")
+    static let mock: Team = Team(name: "Ferrari",
+                                 brandColour: "red")
 }
